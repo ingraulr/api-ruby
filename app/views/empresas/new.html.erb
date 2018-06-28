@@ -1,4 +1,6 @@
-<%= form_for @empresa, :html => {:class => "form-horizontal center"} do |f| %>
+<h1>Agregar Empresa </h1>
+
+<%= form_for @empresa, :html => {:class => "form-horizontal center col-md-6"} do |f| %>
     <div class="form-group">
         <%= f.label :empresa_uid, "Empresa UID:", class: "col-md-4 control-label" %>
             <div class="col-md-8">
@@ -11,48 +13,38 @@
                 <%= f.text_field :empresa_api_key, class: "form-control" %>
             </div>
     </div>
-
-
     <div class="form-group">
         <%= f.label :ambiente, "Ambiente", class: "col-md-4 control-label" %>
-            <div class="col-md-8>
-        <%= f.text_field :ambiente, class: " form-control " %>
+            <div class="col-md-8">
+                <%= f.text_field :ambiente, class: "form-control" %>
+            </div>
     </div>
-
-    <div class="radio ">
-        <%= f.radio_button :ambiente, 's', :checked => true %> Staging.
-        <br />
-        <%= f.radio_button :ambiente, 'p', :checked => false %> Produccion.
-    </div>
-
-
-
     <div class="form-group">
         <%= f.label :objeto, "Objeto", class: "col-md-4 control-label" %>
             <div class="col-md-8">
                 <%= f.text_field :objeto, class: "form-control" %>
             </div>
     </div>
-
     <div class="form-group">
-        <%= f.label :certificado_pem, "Certificado", class: "col-md-4 control-label" %>
-            <div class="col-md-8>
-            <%= f.text_field :certificado_pem, class: " form-control " %>
+        <%= f.label :certificado_pem, "Certificado PEM", class: "col-md-4 control-label" %>
+            <div class="col-md-8">
+                <%= f.text_field :certificado_pem, class: "form-control" %>
+            </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :llave_pem, "LLave PEM", class: "col-md-4 control-label" %>
+            <div class="col-md-8">
+                <%= f.text_field :llave_pem, class: "form-control" %>
+            </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :llave_password, "LLave Password", class: "col-md-4 control-label" %>
+            <div class="col-md-8">
+                <%= f.text_field :llave_password, class: "form-control" %>
+            </div>
     </div>
 
-    <div class="form-group">
-        <%= f.label :llave_pem, "Llave Pem", class: "col-md-4 control-label" %>
-            <div class="col-md-8>
-            <%= f.text_field :llave_pem, class: " form-control " %>
-    </div>
 
-    <div class="form-group">
-        <%= f.label :llave_password, "Llave password", class: "col-md-4 control-label" %>
-            <div class="col-md-8>
-            <%= f.text_field :llave_password, class: " form-control " %>
-    </div>
-
-
-        <%= f.submit "Submit ", class: "btn btn-default btn-primary " %>
+        <%= f.submit "Guardar ", class: "btn btn-default btn-primary " %>
 
 <% end %>

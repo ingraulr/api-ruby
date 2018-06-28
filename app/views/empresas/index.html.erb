@@ -1,0 +1,63 @@
+<h1>Listado de Empresas</h1>
+
+
+<div class="container">
+    <div class="row col-md-9 custyle">
+        <h1>
+        </b>
+        <% if @empresas.nil? || @empresas.empty? %>
+        <br>
+            <h2 class="text-danger text-center"> No hay registros en el listado </h2>
+            <% else %>
+                <table class="table table-striped custab">
+                    <thead>
+                        <tr>
+                            <th>Empresa UID</th>
+                            <th>Empresa API key</th>
+                            <th>Ambiente</th>
+                            <th>Objeto</th>
+                            <th>Certificado PEM</th>
+                            <th>Llave PEM</th>
+                            <th>Password Llave</th>
+                            <th> </th>
+                        </tr>
+                    </thead
+                    </h1>
+                    <tbody>
+                        <% @empresas.each do |empresa| %>
+                            <tr>
+                                <td>
+                                    <%= link_to empresa.empresa_uid, empresa_path(empresa) %>
+                                </td>
+                                <td>
+                                    <%= empresa.empresa_api_key %>
+                                </td>
+                                <td>
+                                    <%= empresa.ambiente %>
+                                </td>
+                                <td>
+                                    <%= empresa.objeto %>
+                                </td>
+                                <td>
+                                    <%= empresa.certificado_pem %>
+                                </td>
+                                <td>
+                                    <%= empresa.llave_pem %>
+                                </td>
+                                <td>
+                                    <%= empresa.llave_password %>
+                                </td>
+                                <td>
+                                    <%= link_to ' Editar', edit_empresa_path(empresa), :class => 'btn btn-xs btn-info' %>
+                                        <%= link_to ' Eliminar', empresa_path(empresa),
+                    method: :delete, data: { confirm: 'Seguro que deseas eliminar la empresa?'}, :class => 'btn btn-xs btn-danger' %>
+                                </td>
+                            </tr>
+                            <% end %>
+                                <% end %>
+                    </tbody>
+                </table>
+            </br>
+                <%= link_to  "Nueva Empresa", new_empresa_path, class: 'btn btn-md btn-success' %>
+    </div>
+</div>

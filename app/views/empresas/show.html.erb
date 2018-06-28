@@ -1,0 +1,33 @@
+<h1>Mostrar Empresa</h1>
+<div class="container">
+    <div class="row col-md-9 custyle">
+        <h1>
+            </b>
+            <p>
+                <strong>Empresa UID</strong>
+                <%= @empresa.empresa_uid %>
+            </p>
+
+            <p>
+                <strong>Empresa API key:</strong>
+                <%= @empresa.empresa_api_key %>
+            </p>
+
+            <p>
+                <strong>Ambiente:</strong>
+                <%= @empresa.ambiente %>
+            </p>
+
+            <p>
+                <strong>Objeto:</strong>
+                <%= @empresa.objeto %>
+            </p>
+
+            <p>
+                <strong>Certificado PEM:</strong>
+                <%= @empresa.certificado_pem %>
+            </p>
+                    <%= link_to  "Listado", empresas_path, class: 'btn btn-md btn-primary' %>
+        </h1>
+    </div>   
+</div>    

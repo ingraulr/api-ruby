@@ -1,0 +1,2 @@
+class CatalogoAmbiente < ApplicationRecord
+end

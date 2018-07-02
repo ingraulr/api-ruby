@@ -1,0 +1,73 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  empresa_uid: MyString
+  empresa_api_key: MyString
+  ambiente: MyString
+  objeto: MyString
+  certificado_pem: MyString
+  llave_pem: MyString
+  llave_password: MyString
+  folio: MyString
+  fecha: 2018-06-29 09:35:34
+  tipo_comprobante: MyString
+  lugar_expedicion: MyString
+  forma_pago: MyString
+  metodo_pago: MyString
+  moneda: MyString
+  tipo_cambio: MyString
+  subtotal: 1
+  total: 1
+  rfc_emisor: MyString
+  nombre_emisor: MyString
+  regimen_fiscal_emisor: MyString
+  rfc_receptor: MyString
+  nombre_receptor: MyString
+  uso_cfdi: MyString
+  clave_producto_servicio: MyString
+  clave_unidad: MyString
+  cantidad: 1
+  descripcion: MyText
+  valor_unitario: 1
+  importe: 1
+  unidad: MyString
+  no_identificacion: MyString
+  base: 1
+  impuesto: MyString
+  tipo_factor: MyString
+
+two:
+  empresa_uid: MyString
+  empresa_api_key: MyString
+  ambiente: MyString
+  objeto: MyString
+  certificado_pem: MyString
+  llave_pem: MyString
+  llave_password: MyString
+  folio: MyString
+  fecha: 2018-06-29 09:35:34
+  tipo_comprobante: MyString
+  lugar_expedicion: MyString
+  forma_pago: MyString
+  metodo_pago: MyString
+  moneda: MyString
+  tipo_cambio: MyString
+  subtotal: 1
+  total: 1
+  rfc_emisor: MyString
+  nombre_emisor: MyString
+  regimen_fiscal_emisor: MyString
+  rfc_receptor: MyString
+  nombre_receptor: MyString
+  uso_cfdi: MyString
+  clave_producto_servicio: MyString
+  clave_unidad: MyString
+  cantidad: 1
+  descripcion: MyText
+  valor_unitario: 1
+  importe: 1
+  unidad: MyString
+  no_identificacion: MyString
+  base: 1
+  impuesto: MyString
+  tipo_factor: MyString

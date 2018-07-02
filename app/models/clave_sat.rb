@@ -1,0 +1,2 @@
+class ClaveSat < ApplicationRecord
+end

@@ -1,6 +1,6 @@
 class EmpresasController < ApplicationController
     def index
-      @empresas = Empresa.all
+        @empresas = Empresa.all
     end
 
     def new
@@ -10,19 +10,22 @@ class EmpresasController < ApplicationController
     def create
         @empresa = Empresa.new(empresa_params)
     
-        @empresa.save
-        redirect_to empresas_path
+        if @empresa.save
+            redirect_to empresas_path
+        else
+            render 'new'
+        end
     end
 
     def show
-      @empresa = Empresa.find(params[:id])
+        @empresa = Empresa.find(params[:id])
     end
 
     def destroy
-      @empresa = Empresa.find(params[:id])
-      @empresa.destroy
+        @empresa = Empresa.find(params[:id])
+        @empresa.destroy
 
-      redirect_to empresas_path
+        redirect_to empresas_path
     end
 
     private

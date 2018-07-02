@@ -1,0 +1,2 @@
+class CatalogoUnidad < ApplicationRecord
+end

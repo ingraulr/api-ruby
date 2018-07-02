@@ -1,0 +1,2 @@
+class CatalogoMoneda < ApplicationRecord
+end

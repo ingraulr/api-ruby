@@ -1,28 +1,28 @@
-<h1>Agregar Empresa </h1>
+<h1>Nuevo Comprobante </h1>
 
-<%= form_for @empresa, :html => {:class => "form-horizontal center col-md-6"} do |f| %>
+<%= form_for @comprobante, :html => {:class => "form-horizontal center col-md-6"} do |f| %>
     <div class="form-group">
         <%= f.label :empresa_uid, "Empresa UID:", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :empresa_uid, class: "form-control" %>
+                <%= f.text_field :empresa_uid, :value => 'asd123asd', class: "form-control" %>
             </div>
     </div>
     <div class="form-group">
         <%= f.label :empresa_api_key, "Empresa API key", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :empresa_api_key, class: "form-control" %>
+                <%= f.text_field :empresa_api_key, :value => '123123123', class: "form-control" %>
             </div>
     </div>
     <div class="form-group">
         <%= f.label :ambiente, "Ambiente", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                    <%= f.collection_select :ambiente, CatalogoAmbiente.all, :ambiente, :ambiente, {:include_blank => 'Selecciona el ambiente'} , {class: 'form-control'} %>
+                <%= f.collection_select :ambiente, CatalogoAmbiente.all, :ambiente, :ambiente, {:include_blank => 'Selecciona el ambiente'} , {class: 'form-control'} %>
             </div>
     </div>
     <div class="form-group">
         <%= f.label :objeto, "Objeto", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                    <%= f.collection_select :objeto, CatalogoObjeto.all, :tipo, :tipo, {:include_blank => 'Seleccione el Objeto'} , {class: 'form-control'} %>
+                <%= f.collection_select :objeto, CatalogoObjeto.all, :tipo, :tipo, {:include_blank => 'Seleccione el Objeto'} , {class: 'form-control'} %>
             </div>
     </div>
     <div class="form-group">
@@ -52,7 +52,7 @@
     <div class="form-group">
         <%= f.label :fecha, "Fecha", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :fecha, class: "form-control" %>
+                <%= f.text_field :fecha, :value => Time.now.strftime("%FT%H:%M:%S"), class: 'form-control' %>
             </div>
     </div>
     <div class="form-group">
@@ -62,105 +62,100 @@
             </div>
     </div>
     <div class="form-group">
-        <%= f.label :llave_password, "LLave Password", class: "col-md-4 control-label" %>
-            <div class="col-md-8">
-                <%= f.text_field :llave_password, class: "form-control" %>
-            </div>
-    </div>
-    <div class="form-group">
         <%= f.label :lugar_expedicion, "Lugar de Expedicion", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :lugar_expedicion, class: "form-control" %>
+                <%= f.text_field :lugar_expedicion, :value => '21100', class: "form-control" %>
             </div>
     </div>
     <div class="form-group">
         <%= f.label :forma_pago, "Forma de pago", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :forma_pago, class: "form-control" %>
+                <%= f.collection_select :forma_pago, FormaPago.all, :clave, :descripcion, {:include_blank => 'Seleccione Forma de Pago'} , {class: 'form-control'} %>
             </div>
     </div>
     <div class="form-group">
         <%= f.label :metodo_pago, "Metodo de pago", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :metodo_pago, class: "form-control" %>
+                <%= f.collection_select :metodo_pago, MetodoPago.all, :clave, :descripcion, {:include_blank => 'Seleccione Metodo de Pago'} , {class: 'form-control'} %>
             </div>
     </div>
     <div class="form-group">
         <%= f.label :moneda, "Moneda", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :moneda, class: "form-control" %>
+                <%= f.collection_select :moneda, CatalogoMoneda.all, :clave, :descripcion, {:include_blank => 'Selecciona Moneda'} , {class: 'form-control'} %>
             </div>
     </div>
     <div class="form-group">
         <%= f.label :tipo_cambio, "Tipo de Cambio", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :tipo_cambio, class: "form-control" %>
+                <%= f.text_field :tipo_cambio, value: '1', class: "form-control" %>
             </div>
     </div>
     <div class="form-group">
         <%= f.label :subtotal, "Subtotal", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :subtotal, class: "form-control" %>
+                <%= f.text_field :subtotal, :value => '99.00', class: "form-control" %>
             </div>
     </div>
     <div class="form-group">
         <%= f.label :total, "Total", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :total, class: "form-control" %>
+                <%= f.text_field :total, :value => '99.00', class: "form-control" %>
             </div>
     </div>
     <div class="form-group">
         <%= f.label :rfc_emisor, "RFC Emisor", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :rfc_emisor, class: "form-control" %>
+                <%= f.text_field :rfc_emisor, :value => 'DDM090629R13', class: "form-control" %>
             </div>
     </div>
     <div class="form-group">
         <%= f.label :nombre_emisor, "Emisor", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :nombre_emisor, class: "form-control" %>
+                <%= f.text_field :nombre_emisor, :placeholder => 'Nombre Emisor', class: "form-control" %>
             </div>
     </div>
     <div class="form-group">
         <%= f.label :regimen_fiscal_emisor, "Regimen Fiscal", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :regimen_fiscal_emisor, class: "form-control" %>
+                <%= f.collection_select :regimen_fiscal_emisor, RegimenFiscal.all, :clave, :descripcion, {:include_blank => 'Regimen Fiscal'} , {class: 'form-control'} %>
             </div>
     </div>
     <div class="form-group">
         <%= f.label :rfc_receptor, "RFC Receptor", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :rfc_receptor, class: "form-control" %>
+                <%= f.text_field :rfc_receptor, :value => 'XEXX010101000',  class: "form-control" %>
             </div>
     </div>
     <div class="form-group">
         <%= f.label :nombre_receptor, "Receptor", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :nombre_receptor, class: "form-control" %>
+                <%= f.text_field :nombre_receptor, :value => 'Nombre del Receptor', class: "form-control" %>
             </div>
     </div>
     <div class="form-group">
         <%= f.label :uso_cfdi, "Uso CFDI", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :uso_cfdi, class: "form-control" %>
+                <%= f.collection_select :uso_cfdi, UsoCfdi.all, :clave, :descripcion, {:include_blank => 'Uso CFDI'} , {class: 'form-control'} %>
             </div>
     </div>
     <div class="form-group">
         <%= f.label :clave_producto_servicio, "Clave Producto SAT", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :clave_producto_servicio, class: "form-control" %>
+                <%= f.collection_select :clave_producto_servicio, ClaveSat.all, :clave, :descripcion, {:include_blank => 'Seleccine La Clave SAT'} , {class: 'form-control'} %>
             </div>
     </div>
     <div class="form-group">
         <%= f.label :clave_unidad, "Clave Unidad SAT", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :clave_unidad, class: "form-control" %>
+                <%= f.collection_select :clave_unidad, CatalogoUnidad.all, :clave, :descripcion, {:include_blank => 'Seleccine la Unidad SAT'} , {class: 'form-control'} %>
+
             </div>
     </div>
     <div class="form-group">
         <%= f.label :cantidad, "Cantidad", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :cantidad, class: "form-control" %>
+                <%= f.text_field :cantidad, :value => '1', class: "form-control" %>
             </div>
     </div>
     <div class="form-group">
@@ -172,13 +167,13 @@
     <div class="form-group">
         <%= f.label :valor_unitario, "Valor Unitario", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :valor_unitario, class: "form-control" %>
+                <%= f.text_field :valor_unitario, :value => '99.00', class: "form-control" %>
             </div>
     </div>
     <div class="form-group">
         <%= f.label :importe, "Importe", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :importe, class: "form-control" %>
+                <%= f.text_field :importe, :value => '99.00', class: "form-control" %>
             </div>
     </div>
     <div class="form-group">
@@ -196,24 +191,29 @@
     <div class="form-group">
         <%= f.label :base, "Base", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :base, class: "form-control" %>
+                <%= f.text_field :base, :value => '99.00', class: "form-control" %>
             </div>
     </div>
     <div class="form-group">
         <%= f.label :impuesto, "Impuesto", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :impuesto, class: "form-control" %>
+                <%= f.text_field :impuesto, :value => '002', class: "form-control" %>
             </div>
     </div>
     <div class="form-group">
         <%= f.label :tipo_factor, "Tipo Factor", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :tipo_factor, class: "form-control" %>
+                <%= f.text_field :tipo_factor, :value => 'Exento', class: "form-control" %>
             </div>
     </div>
 
-        <%= f.submit "Guardar ", class: "btn btn-default btn-primary " %>
-        
+
+    <%= f.submit "Guardar ", class: "btn btn-default btn-primary " %>
+
 <% end %>
-<br><br>
-<%= link_to  "Regresar", root_path, class:'btn btn-md btn-success col-md-1' %>
+            <br>
+            <br>
+            <%= link_to  "Regresar", root_path, class:'btn btn-md btn-success col-md-1' %>
+
+
+  

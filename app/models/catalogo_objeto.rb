@@ -1,0 +1,2 @@
+class CatalogoObjeto < ApplicationRecord
+end

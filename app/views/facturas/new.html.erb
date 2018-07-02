@@ -1,35 +1,85 @@
-<%= form_for @factura, :html => {:class => "form-horizontal center"} do |f| %>
+<h1>Nueva Factura </h1>
+
+<%= form_for @factura, :html => {:class => "form-horizontal center col-md-6"} do |f| %>
     <div class="form-group">
-        <%= f.label :fname, "First name:", class: "col-md-4 control-label" %>
+        <%= f.label :Folio, "Folio", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :fname, class: "form-control" %>
+                <%= f.text_field :folio, class: "form-control" %>
             </div>
     </div>
     <div class="form-group">
-        <%= f.label :lname, "Last name:", class: "col-md-4 control-label" %>
+        <%= f.label :fecha, "Fecha", class: "col-md-4 control-label" %>
             <div class="col-md-8">
-                <%= f.text_field :lname, class: "form-control" %>
+                <%= f.text_field :fecha, class: "form-control" %>
+            </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :empresa, "Objeto", class: "col-md-4 control-label" %>
+            <div class="col-md-8">
+            </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :tipo_comprobante, "Tipo de Comprobante", class: "col-md-4 control-label" %>
+            <div class="col-md-8">
+                <%= f.text_field :tipo_comprobante, class: "form-control" %>
+            </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :lugar_expedicion, "Lugar de Expedicion", class: "col-md-4 control-label" %>
+            <div class="col-md-8">
+                <%= f.text_field :lugar_expedicion, class: "form-control" %>
+            </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :forma_pago, "Forma de Pago", class: "col-md-4 control-label" %>
+            <div class="col-md-8">
+                <%= f.text_field :forma_pago, class: "form-control" %>
+            </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :forma_pago, "Forma de Pago", class: "col-md-4 control-label" %>
+            <div class="col-md-8">
+                <%= f.text_field :forma_pago, class: "form-control" %>
+            </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :metodo_pago, "Metodo de Pago", class: "col-md-4 control-label" %>
+            <div class="col-md-8">
+                <%= f.text_field :metodo_pago, class: "form-control" %>
+            </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :moneda, "Moneda", class: "col-md-4 control-label" %>
+            <div class="col-md-8">
+                <%= f.text_field :moneda, class: "form-control" %>
+            </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :tipo_cambio, "Tipo de cambio", class: "col-md-4 control-label" %>
+            <div class="col-md-8">
+                <%= f.text_field :tipo_cambio, class: "form-control" %>
+            </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :subtotal, "Subtotal", class: "col-md-4 control-label" %>
+            <div class="col-md-8">
+                <%= f.text_field :subtotal, class: "form-control" %>
+            </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :total, "Total", class: "col-md-4 control-label" %>
+            <div class="col-md-8">
+                <%= f.text_field :total, class: "form-control" %>
             </div>
     </div>
 
-    <div class="form-group">
-        <%= f.label :comments, "Comments:", class: "col-md-4 control-label" %>
-            <div class="col-md-8>
-          <%= f.text_field :comments, class: " form-control " %>
-        </div>
-      </div>
-      <div class="radio ">
-        <%= f.radio_button :attend, 'yes', :checked => true %> I will attend.
-        <br />
-        <%= f.radio_button :attend, 'no', :checked => false %> I will not attend.
-      </div>
-      <div class="checkbox ">
-        <%= f.check_box :workshop %> Checkbox Description
-      </div>
 
-      <%= f.submit "Submit ", class: "btn btn-default btn-primary " %>  
- <% end %>
+    <%= f.submit "Guardar ", class: "btn btn-default btn-primary " %>
 
+        <% end %>
+            <br>
+            <br>
+            <%= link_to  "Regresar", root_path, class:'btn btn-md btn-success col-md-1' %>
 
 
 

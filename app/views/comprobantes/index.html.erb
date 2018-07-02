@@ -1,0 +1,174 @@
+<br><br>
+<h1>Comprobantes</h1>
+
+<div class="tabla">
+    <div class="row custyle">
+        <h6>
+            </b>
+            <% if @comprobantes.nil? || @comprobantes.empty? %>
+                <br>
+                <h2 class="text-danger text-center"> No hay registros en el listado </h2>
+                <% else %>
+                    <table class="table table-striped custab">
+                        <thead>
+                            <tr>
+                                <th>Empresa UID</th>
+                                <th>Empresa API key</th>
+                                <th>Ambiente</th>
+                                <th>Objeto</th>
+                                <th>Certificado PEM</th>
+                                <th>Llave PEM</th>
+                                <th>Password Llave</th>
+                                <th>Folio</th>
+                                <th>Fecha</th>
+                                <th>Tipo de Comprobante</th>
+                                <th>Lugar E.</th>
+                                <th>Forma pago</th>
+                                <th>Metodo Pago</th>
+                                <th>Moneda</th>
+                                <th>Tipo de Cambio</th>
+                                <th>Subtotal</th>
+                                <th>Total</th>
+                                <th>RFC Emisor</th>
+                                <th>Emisor</th>
+                                <th>Regimen Fiscal</th>
+                                <th>RFC Receptor</th>
+                                <th>Receptor</th>
+                                <th>Uso CFDi</th>
+                                <th>Clave SAT</th>
+                                <th>Unidad SAT</th>
+                                <th>Cantidad</th>
+                                <th>Descripcion</th>
+                                <th>Precio Unitario</th>
+                                <th>Importe</th>
+                                <th>Unidad</th>
+                                <th>Articulo</th>
+                                <th>Base</th>
+                                <th>Impuesto</th>
+                                <th>Tipo Factor</th>
+                                <th> </th>
+                            </tr>
+                        </thead </h1>
+                        <tbody>
+                            <% @comprobantes.each do |comprobante| %>
+                                <tr>
+                                    <td>
+                                        <%= link_to comprobante.empresa_uid, comprobante_path(comprobante) %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.empresa_api_key %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.ambiente %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.objeto %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.certificado_pem %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.llave_pem %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.llave_password %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.folio %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.fecha %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.tipo_comprobante %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.lugar_expedicion %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.forma_pago %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.metodo_pago %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.moneda %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.tipo_cambio %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.subtotal %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.total %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.rfc_emisor %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.nombre_emisor %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.regimen_fiscal_emisor %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.rfc_emisor %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.nombre_receptor %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.uso_cfdi %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.clave_producto_servicio %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.clave_unidad %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.cantidad %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.descripcion %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.valor_unitario %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.importe %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.unidad %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.no_identificacion %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.base %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.impuesto %>
+                                    </td>
+                                    <td>
+                                        <%= comprobante.tipo_factor %>
+                                    </td>
+                                    <td>
+                                            <%= link_to ' Eliminar', comprobante_path(comprobante),
+                    method: :delete, data: { confirm: 'Seguro que deseas eliminar el comprobante?'}, :class => 'btn btn-xs btn-danger' %>
+                                    </td>
+                                </tr>
+                                <% end %>
+                                    <% end %>
+                        </tbody>
+                    </table>
+                    </br>
+        </h6>
+    </div>
+</div>
+<div class="container-2">
+        <%= link_to  "Nuevo Comprobante", new_comprobante_path, class: 'btn btn-xl btn-success btn-block' %>
+</div>
+
+

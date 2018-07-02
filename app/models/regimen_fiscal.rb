@@ -1,0 +1,2 @@
+class RegimenFiscal < ApplicationRecord
+end

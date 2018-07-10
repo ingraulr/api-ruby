@@ -25,7 +25,7 @@
                 <%= f.collection_select :objeto, CatalogoObjeto.all, :tipo, :tipo, {:include_blank => 'Seleccione el Objeto'} , {class: 'form-control'} %>
             </div>
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
         <%= f.label :certificado_pem, "Certificado PEM", class: "col-md-4 control-label" %>
             <div class="col-md-8">
                 <%= f.text_field :certificado_pem, class: "form-control" %>
@@ -42,7 +42,7 @@
             <div class="col-md-8">
                 <%= f.text_field :llave_password, class: "form-control" %>
             </div>
-    </div>
+    </div> -->
     <div class="form-group">
         <%= f.label :folio, "Folio", class: "col-md-4 control-label" %>
             <div class="col-md-8">
@@ -208,7 +208,7 @@
     </div>
 
 
-    <%= f.submit "Guardar ", class: "btn btn-default btn-primary " %>
+    <%= f.submit "Guardar Comprobante", class: "btn btn-lg btn-primary " %>
 
 <% end %>
             <br>

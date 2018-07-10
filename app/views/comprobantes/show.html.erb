@@ -7,9 +7,9 @@
             "ambiente":"<%=link_to @comprobante.ambiente, comprobante_path(@comprobante)%>",<br>
             "objeto":"<%=link_to @comprobante.objeto, comprobante_path(@comprobante)%>"},<br>
         "data":[{"datos_fiscales":{ <br> 
-            "certificado_pem":"<%=link_to @comprobante.certificado_pem, comprobante_path(@comprobante)%>",<br>
-            "llave_pem":"<%=link_to @comprobante.llave_pem, comprobante_path(@comprobante)%>",<br>
-            "llave_password":"<%=link_to @comprobante.llave_password, comprobante_path(@comprobante)%>"},<br>
+            "certificado_pem":"<%=link_to @comprobante.certificado_pem.truncate(50), comprobante_path(@comprobante)%>",<br>
+            "llave_pem":"<%=link_to @comprobante.llave_pem.truncate(50), comprobante_path(@comprobante)%>",<br>
+            "llave_password":"<%=link_to @comprobante.llave_password.truncate(50), comprobante_path(@comprobante)%>"},<br>
         "cfdi":{"cfdi__comprobante":{<br>
             "folio":"<%=link_to @comprobante.folio, comprobante_path(@comprobante)%>",<br>
         "fecha":"<%=link_to @comprobante.fecha, comprobante_path(@comprobante)%>",<br>
@@ -45,6 +45,9 @@
     </b>
 </h4>
 
+
+
 <h1>
-    <%= link_to  "Listado de Comprobantes", comprobantes_path, class: 'btn btn-ls btn-warning' %>
+    <%= link_to  "Listado de Comprobantes", comprobantes_path, class: 'btn btn-lg btn-warning' %>
+    <%= link_to "Timbrar Comprobante",comprobante_timbrar_path(@comprobante), :method => :post ,  class: "btn btn-lg btn-success" %>
 </h1>

@@ -96,21 +96,6 @@ ActiveRecord::Schema.define(version: 2018_07_02_171124) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "facturas", force: :cascade do |t|
-    t.string "folio"
-    t.datetime "fecha"
-    t.string "tipo_comprobante"
-    t.string "lugar_expedicion"
-    t.string "forma_pago"
-    t.string "metodo_pago"
-    t.string "moneda"
-    t.string "tipo_cambio"
-    t.integer "subtotal"
-    t.integer "total"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "forma_pagos", force: :cascade do |t|
     t.string "clave"
     t.string "descripcion"

@@ -65,13 +65,13 @@
                                         <%= comprobante.objeto %>
                                     </td>
                                     <td>
-                                        <%= comprobante.certificado_pem %>
+                                        <%= comprobante.certificado_pem.truncate(50) %>
                                     </td>
                                     <td>
-                                        <%= comprobante.llave_pem %>
+                                        <%= comprobante.llave_pem.truncate(50) %>
                                     </td>
                                     <td>
-                                        <%= comprobante.llave_password %>
+                                        <%= comprobante.llave_password.truncate(50) %>
                                     </td>
                                     <td>
                                         <%= comprobante.folio %>

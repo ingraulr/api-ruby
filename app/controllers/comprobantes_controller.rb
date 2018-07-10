@@ -88,8 +88,7 @@ class ComprobantesController < ApplicationController
         
         factura_generada = @api.generacion_factura(factura.to_json)
         debugger
-
-        puts 'timbrado'
+        puts 'algo'
 
     end
     private

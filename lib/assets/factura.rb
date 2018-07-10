@@ -45,6 +45,7 @@ class Factura
     def get_post_response(uri, data)
       headers = {"Authorization": "Token token=#{API_KEY}", "Accept": "application/json", "Content-Type": "application/json", "Access-Control-Allow-Origin" => "*"}
         response = Unirest.post uri, headers:headers, parameters:data.to_json
+        debugger
         return response.body
     end
 end

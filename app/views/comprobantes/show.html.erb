@@ -1,17 +1,19 @@
 <h1>Json</h1>
-<h4>
-    <b>
-        '{"meta":{<br>
-            "empresa_uid":"<%= link_to @comprobante.empresa_uid, comprobante_path(@comprobante)%>}",<br>
-            "empresa_api_key":"<%=link_to @comprobante.empresa_api_key,comprobante_path(@comprobante)%>",<br>
-            "ambiente":"<%=link_to @comprobante.ambiente, comprobante_path(@comprobante)%>",<br>
-            "objeto":"<%=link_to @comprobante.objeto, comprobante_path(@comprobante)%>"},<br>
-        "data":[{"datos_fiscales":{ <br> 
-            "certificado_pem":"<%=link_to @comprobante.certificado_pem.truncate(50), comprobante_path(@comprobante)%>",<br>
-            "llave_pem":"<%=link_to @comprobante.llave_pem.truncate(50), comprobante_path(@comprobante)%>",<br>
+<div class="container-show">
+
+    <h4>
+        <b>
+            '{"meta":{<br>
+                "empresa_uid":"<%= link_to @comprobante.empresa_uid, comprobante_path(@comprobante)%>}",<br>
+                "empresa_api_key":"<%=link_to @comprobante.empresa_api_key,comprobante_path(@comprobante)%>",<br>
+                "ambiente":"<%=link_to @comprobante.ambiente, comprobante_path(@comprobante)%>",<br>
+                "objeto":"<%=link_to @comprobante.objeto, comprobante_path(@comprobante)%>"},<br>
+                "data":[{"datos_fiscales":{ <br> 
+                    "certificado_pem":"<%=link_to @comprobante.certificado_pem.truncate(50), comprobante_path(@comprobante)%>",<br>
+                    "llave_pem":"<%=link_to @comprobante.llave_pem.truncate(50), comprobante_path(@comprobante)%>",<br>
             "llave_password":"<%=link_to @comprobante.llave_password.truncate(50), comprobante_path(@comprobante)%>"},<br>
-        "cfdi":{"cfdi__comprobante":{<br>
-            "folio":"<%=link_to @comprobante.folio, comprobante_path(@comprobante)%>",<br>
+            "cfdi":{"cfdi__comprobante":{<br>
+                "folio":"<%=link_to @comprobante.folio, comprobante_path(@comprobante)%>",<br>
         "fecha":"<%=link_to @comprobante.fecha, comprobante_path(@comprobante)%>",<br>
         "tipo_comprobante":"<%=link_to @comprobante.tipo_comprobante, comprobante_path(@comprobante)%>",<br>
         "lugar_expedicion":"<%=link_to @comprobante.lugar_expedicion, comprobante_path(@comprobante)%>",<br>
@@ -26,12 +28,12 @@
         "regimen_fiscal":"<%=link_to @comprobante.regimen_fiscal_emisor, comprobante_path(@comprobante)%>"},<br>
         "cfdi__receptor":{<br>
             "rfc":"<%=link_to @comprobante.rfc_receptor, comprobante_path(@comprobante)%>",<br>
-        "nombre":"<%=link_to @comprobante.nombre_receptor, comprobante_path(@comprobante)%>",<br>
-        "uso_cfdi":"<%=link_to @comprobante.uso_cfdi, comprobante_path(@comprobante)%>"},<br>
-        "cfdi__conceptos":{"cfdi__concepto":[{<br>
-            "clave_producto_servicio":"<%=link_to @comprobante.clave_producto_servicio, comprobante_path(@comprobante)%>",<br>
-            "clave_unidad":"<%=link_to @comprobante.clave_unidad, comprobante_path(@comprobante)%>",<br>
-            "cantidad":"<%=link_to @comprobante.cantidad, comprobante_path(@comprobante)%>",<br>
+            "nombre":"<%=link_to @comprobante.nombre_receptor, comprobante_path(@comprobante)%>",<br>
+            "uso_cfdi":"<%=link_to @comprobante.uso_cfdi, comprobante_path(@comprobante)%>"},<br>
+            "cfdi__conceptos":{"cfdi__concepto":[{<br>
+                "clave_producto_servicio":"<%=link_to @comprobante.clave_producto_servicio, comprobante_path(@comprobante)%>",<br>
+                "clave_unidad":"<%=link_to @comprobante.clave_unidad, comprobante_path(@comprobante)%>",<br>
+                "cantidad":"<%=link_to @comprobante.cantidad, comprobante_path(@comprobante)%>",<br>
         "descripcion":"<%=link_to @comprobante.descripcion, comprobante_path(@comprobante)%>",<br>
         "valor_unitario":"<%=link_to @comprobante.valor_unitario, comprobante_path(@comprobante)%>",<br>
         "importe":"<%=link_to @comprobante.importe, comprobante_path(@comprobante)%>",<br>
@@ -40,14 +42,19 @@
         "cfdi__impuestos":{"cfdi__traslados":{<br>
             "cfdi__traslado":[{<br>
                 "base":"<%=link_to @comprobante.base, comprobante_path(@comprobante)%>",<br>
-            "impuesto":"<%=link_to @comprobante.impuesto, comprobante_path(@comprobante)%>",<br>
-            "tipo_factor":"<%=link_to @comprobante.tipo_factor, comprobante_path(@comprobante)%>"}]}}}]}}}}]}';
-    </b>
-</h4>
+                "impuesto":"<%=link_to @comprobante.impuesto, comprobante_path(@comprobante)%>",<br>
+                "tipo_factor":"<%=link_to @comprobante.tipo_factor, comprobante_path(@comprobante)%>"}]}}}]}}}}]}';
+            </b>
+        </h4>
+        
+        
+        
+    </div>
+    <h1>
+        <%= link_to  "Listado de Comprobantes", comprobantes_path, class: 'btn btn-lg btn-warning' %>
+            <%= link_to "Timbrar Comprobante",comprobante_timbrar_path(@comprobante), :method => :post ,  class: "btn btn-lg btn-success" %>
+            <%= link_to "Enviar Comprobante",comprobante_enviar_path(@comprobante), :method => :post ,  class: "btn btn-lg btn-primary" %>
+            <%= link_to "Cancelar Comprobante",comprobante_cancelar_path(@comprobante), :method => :post ,  class: "btn btn-lg btn-danger" %>
+            <%= link_to "Descargar Comprobante",comprobante_descargar_path(@comprobante), :method => :post ,  class: "btn btn-lg btn-success" %>
 
-
-
-<h1>
-    <%= link_to  "Listado de Comprobantes", comprobantes_path, class: 'btn btn-lg btn-warning' %>
-    <%= link_to "Timbrar Comprobante",comprobante_timbrar_path(@comprobante), :method => :post ,  class: "btn btn-lg btn-success" %>
-</h1>
+    </h1>

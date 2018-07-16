@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_02_171124) do
+ActiveRecord::Schema.define(version: 2018_07_12_201141) do
 
   create_table "catalogo_ambientes", force: :cascade do |t|
     t.string "ambiente"
@@ -82,6 +82,10 @@ ActiveRecord::Schema.define(version: 2018_07_02_171124) do
     t.string "tipo_factor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.binary "timbrado"
+    t.boolean "generado"
+    t.boolean "vigencia"
+    t.string "uuid"
   end
 
   create_table "empresas", force: :cascade do |t|

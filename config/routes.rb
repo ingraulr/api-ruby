@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :empresas
   resources :comprobantes do
     post :timbrar
+    post :cancelar
+    post :enviar
+    post :descargar
   end
 
   

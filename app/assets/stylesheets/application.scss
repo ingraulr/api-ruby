@@ -26,12 +26,34 @@
     margin-left: 760px;
 
 }
+.container-show {    
+    text-align: center;
+    margin-right: 590px;
+    margin-left: 560px;
+
+}
 
 .msg {    
     text-align: center;
-    margin-right: 790px;
-    margin-left: 760px;
+    margin-right: 390px;
+    margin-left: 360px;
+    font-size: 1.5em
 
+}
+
+.cancelada {
+    font-weight: 900;
+    color: red;
+}
+
+.vigente {
+    font-weight: 900;
+    color: green;
+}
+
+.sin-vigencia {
+    font-weight: 900;
+    color: blue;
 }
 
 .tabla {    

@@ -14,8 +14,11 @@
                             <tr>
                                 <th>Empresa UID</th>
                                 <th>Empresa API key</th>
+                                <th>Estatus</th>
                                 <th>Ambiente</th>
                                 <th>Objeto</th>
+                                <th>Folio Fiscal</th>
+                                <th>Vigencia</th>
                                 <th>Certificado PEM</th>
                                 <th>Llave PEM</th>
                                 <th>Password Llave</th>
@@ -59,10 +62,42 @@
                                         <%= comprobante.empresa_api_key %>
                                     </td>
                                     <td>
+                                        <% if comprobante.generado == false %>
+                                            <%= link_to "preeliminar", comprobante_path(comprobante) %>
+                                        <% else %>
+                                            <%= "Timbrado" %> 
+                                        <% end %>
+                                    </td>
+                                    <td>
                                         <%= comprobante.ambiente %>
                                     </td>
                                     <td>
                                         <%= comprobante.objeto %>
+                                    </td>
+                                    <td>
+                                        <% if comprobante.uuid.present? %>
+                                            <%= comprobante.uuid %>
+                                        <% else %>
+                                            Sin generar
+                                        <% end %>
+                                    </td>
+                                    <td>
+                                        <% if comprobante.generado == false %>
+                                            <p class="sin-vigencia">
+                                                <%= "Sin Vigencia" %>
+                                            </p>
+                                        <% else %>    
+                                            <% if comprobante.vigencia == true  %>
+                                                <p class="cancelada" >
+                                                    <%= "Cancelado" %>
+                                                </p>
+                                            <% else %>
+                                                <p class="vigente">
+                                                    <%= "Vigente" %>
+                                                    <%= link_to "Descargar Comprobante",comprobante_descargar_path(comprobante), :method => :post ,  class: "btn btn-success btn-xs" %>
+                                                </p>
+                                            <% end %>
+                                        <% end %>
                                     </td>
                                     <td>
                                         <%= comprobante.certificado_pem.truncate(50) %>
@@ -169,6 +204,7 @@
 </div>
 <div class="container-2">
         <%= link_to  "Nuevo Comprobante", new_comprobante_path, class: 'btn btn-xl btn-success btn-block' %>
+
 </div>
 
 
